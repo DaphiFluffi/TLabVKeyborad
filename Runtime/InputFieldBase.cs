@@ -40,7 +40,10 @@ namespace TLab.VKeyborad
 
         public virtual void OnTabPressed()
         {
-            AddKey("    ");
+            for (int i = 0; i < 4; i++)
+            {
+                AddKey(" ");
+            }
 
             AfterOnTabPressed();
         }
