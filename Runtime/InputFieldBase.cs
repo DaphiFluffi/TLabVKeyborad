@@ -19,6 +19,11 @@ namespace TLab.VKeyborad
         [SerializeField] protected UnityEvent m_onSpacePressed;
         [SerializeField] protected UnityEvent m_onBackSpacePressed;
         [SerializeField] protected UnityEvent m_onSymbolPressed;
+        [SerializeField] protected UnityEvent m_onUpArrowPressed;
+        [SerializeField] protected UnityEvent m_onDownArrowPressed;
+        [SerializeField] protected UnityEvent m_onLeftArrowPressed;
+        [SerializeField] protected UnityEvent m_RightArrowPressed;
+
         [SerializeField] protected UnityEvent<string> m_onKeyPressed;
 
         public bool inputFieldIsActive => m_keyborad.inputFieldBase == this;
@@ -30,6 +35,35 @@ namespace TLab.VKeyborad
         }
 
         #region KEY_EVENT
+
+        public virtual void OnUpArrowPressed()
+        {
+            AfterOnUpArrowPressed();
+        }
+
+        protected virtual void AfterOnUpArrowPressed() => m_onUpArrowPressed.Invoke();
+
+        public virtual void OnDownArrowPressed()
+        {
+            AfterOnDownArrowPressed();
+        }
+
+        protected virtual void AfterOnDownArrowPressed() => m_onDownArrowPressed.Invoke();
+
+        public virtual void OnLeftArrowPressed() 
+        {
+            AfterOnLeftArrowPressed();
+        }
+
+        protected virtual void AfterOnLeftArrowPressed() => m_onLeftArrowPressed.Invoke();
+
+        public virtual void OnRightArrowPressed() 
+        {
+            AfterOnRightArrowPressed();
+        }
+
+        protected virtual void AfterOnRightArrowPressed() => m_RightArrowPressed.Invoke();
+
 
         public virtual void OnEnterPressed()
         {

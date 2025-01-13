@@ -9,7 +9,11 @@ namespace TLab.VKeyborad
         SYMBOL,
         SPACE,
         SHIFT,
-        RETURN
+        RETURN,
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT
     }
 
     public class SKey : KeyBase
@@ -52,6 +56,18 @@ namespace TLab.VKeyborad
                     break;
                 case "TAB":
                     m_sKey = SKeyCode.TAB;
+                    break;
+                case "UP":
+                    m_sKey = SKeyCode.UP;
+                    break;
+                case "DOWN":
+                    m_sKey = SKeyCode.DOWN;
+                    break;
+                case "LEFT":
+                    m_sKey = SKeyCode.LEFT;
+                    break;
+                case "RIGHT":
+                    m_sKey = SKeyCode.RIGHT;
                     break;
             }
 

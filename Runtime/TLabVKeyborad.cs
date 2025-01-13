@@ -187,6 +187,18 @@ namespace TLab.VKeyborad
                             m_symbolBOX.SetActive(active);
                             m_inputFieldBase?.OnSymbolPressed();
                             break;
+                        case SKeyCode.UP:
+                            m_inputFieldBase?.OnUpArrowPressed();
+                            break;
+                        case SKeyCode.DOWN:
+                            m_inputFieldBase?.OnDownArrowPressed();
+                            break;
+                        case SKeyCode.LEFT:
+                            m_inputFieldBase?.OnLeftArrowPressed();
+                            break;
+                        case SKeyCode.RIGHT:
+                            m_inputFieldBase?.OnRightArrowPressed();
+                            break;
                     }
 
                     AudioHandler.ShotAudio(m_audioSource, m_keyStroke, IMMEDIATELY);
